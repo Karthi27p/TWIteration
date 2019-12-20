@@ -14,9 +14,28 @@ class ViewModel: NSObject {
         return model?.name ?? ""
     }
     var productPrice: String {
-        return model?.price ?? ""
+       
+        if((model?.offerPrice) != nil) {
+//            var offerPrice = NSMutableAttributedString(string: model!.offerPrice!, attributes: [NSAttributedString.Key.font :UIFont.smallSystemFontSize])
+//            offerPrice.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:2,length:4))
+//            return offerPrice
+            return model?.offerPrice ?? ""
+        } else {
+            return model?.price ?? ""
+        }
+        
     }
+    
+    var color: UIColor {
+        if ((model?.offerPrice) != nil) {
+            return UIColor.red
+        } else {
+           return UIColor.black
+        }
+    }
+    
     var productImage: String {
         return model?.image ?? ""
     }
+    
 }

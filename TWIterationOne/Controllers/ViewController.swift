@@ -15,13 +15,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let apiService = ApiService()
-        apiService.loadJson(filename:"SampleJson") { (resultModel, error) in
+       /*
+        ApiService.loadJson(filename:"SampleJson") { (resultModel, error) in
             self.model = resultModel as? [Model]
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
             
+        }*/
+        let url = URL(string: "http://www.mocky.io/v2/5dfb59e72f00006200ff9e80")
+        let urlRequest = URLRequest(url: url!)
+        ApiService.getDataFromApi(requestUrl: urlRequest, resultStruct: [Model].self) { (resultModel, error) in
+            DispatchQueue.main.async {
+                self.model = resultModel as? [Model]
+                self.tableView.reloadData()
+            }
         }
         
         // Do any additional setup after loading the view.
@@ -43,7 +51,12 @@ extension ViewController: UITableViewDataSource {
         cellViewModel.model = model?[indexPath.row]
         productListCell.nameLabel.text = cellViewModel.productName
         productListCell.priceLabel.text = cellViewModel.productPrice
-        productListCell.productImage.image = UIImage(named: "product-image")
+        productListCell.priceLabel.textColor = cellViewModel.color
+        cellViewModel.model?.setImage(completion: { (image) in
+            productListCell.productImage.image = image
+        })
+        //productListCell.productImage.image = UIImage(named: "product-image")
+        
         return productListCell
     }
     

@@ -8,8 +8,13 @@
 
 import UIKit
 
+enum JsonError: Error {
+    case InvalidUrl(reason: String)
+    case SerializationError(reason: String)
+}
+
 class ApiService: NSObject {
-    func loadJson(filename fileName: String, completion: @escaping((Any?, Error?) -> ())) {
+   static func loadJson(filename fileName: String, completion: @escaping((Any?, Error?) -> ())) {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
@@ -22,6 +27,42 @@ class ApiService: NSObject {
             }
         }
         completion(nil, nil)
+    }
+    
+    static func getDataFromApi <T> (requestUrl: URLRequest?, resultStruct: T.Type, completion: @escaping((Any?, Error?) -> ())) where T : Decodable {
+        guard  let requestUrl = requestUrl else {
+            completion(nil, JsonError.InvalidUrl(reason: "Invalid request"))
+            return
+        }
+        URLSession.shared.dataTask(with: requestUrl.url!) { (data, response, error) in
+            guard let data = data else {
+                completion(nil, JsonError.SerializationError(reason: "Json serialization error"))
+                return
+            }
+            do {
+                let decodedJson = try JSONDecoder().decode(resultStruct, from: data)
+                DispatchQueue.main.async {
+                    completion(decodedJson, nil)
+                }
+            } catch {
+                completion(nil, JsonError.SerializationError(reason: "Serialization Error"))
+                return
+            }
+            }.resume()
+    }
+    
+    static func getImage(url: URL, completion: @escaping((Any?, Error?) -> ())) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                completion(nil, error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion(data, nil)
+            }
+            
+            }.resume()
     }
 }
 

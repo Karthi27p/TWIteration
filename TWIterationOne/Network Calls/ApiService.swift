@@ -14,7 +14,7 @@ enum JsonError: Error {
 }
 
 class ApiService: NSObject {
-   static func loadJson(filename fileName: String, completion: @escaping((Any?, Error?) -> ())) {
+    static func loadJson(filename fileName: String, completion: @escaping((Any?, Error?) -> ())) {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)

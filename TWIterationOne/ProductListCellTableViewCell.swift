@@ -40,10 +40,10 @@ class ProductListCellTableViewCell: UITableViewCell {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         let count = Int(sender.value).description
         let id = self.pid!
-        if(count != nil) {
-            UserDefaults.standard.set(Int(count), forKey: id)
-            UserDefaults.standard.synchronize()
-        }
+        
+        UserDefaults.standard.set(Int(count), forKey: id)
+        UserDefaults.standard.synchronize()
+        
         let result = UserDefaults.standard.integer(forKey: id)
         self.countLabel.text = String(result)
         

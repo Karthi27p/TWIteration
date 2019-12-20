@@ -11,33 +11,25 @@ import UIKit
 class ViewController: UIViewController {
     
     var model: [Model]?
-
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       /*
-        ApiService.loadJson(filename:"SampleJson") { (resultModel, error) in
-            self.model = resultModel as? [Model]
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-        }*/
+        
         let url = URL(string: "http://www.mocky.io/v2/5dfb59e72f00006200ff9e80")
         let urlRequest = URLRequest(url: url!)
         self.tableView.estimatedRowHeight = 120.0
         self.tableView.rowHeight = UITableView.automaticDimension
-        ApiService.getDataFromApi(requestUrl: urlRequest, resultStruct: [Model].self) { (resultModel, error) in
+        ApiService.getDataFromApi(requestUrl: urlRequest, resultStruct: [Model].self) { [weak self] (resultModel, error) in
             DispatchQueue.main.async {
-                self.model = resultModel as? [Model]
-                self.tableView.reloadData()
+                self?.model = resultModel as? [Model]
+                self?.tableView.reloadData()
             }
         }
         
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -57,7 +49,6 @@ extension ViewController: UITableViewDataSource {
             productListCell.productImage.image = image
         })
         
-        //productListCell.productImage.image = UIImage(named: "product-image")
         
         return productListCell
     }

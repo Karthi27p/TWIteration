@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         }*/
         let url = URL(string: "http://www.mocky.io/v2/5dfb59e72f00006200ff9e80")
         let urlRequest = URLRequest(url: url!)
+        self.tableView.estimatedRowHeight = 120.0
+        self.tableView.rowHeight = UITableView.automaticDimension
         ApiService.getDataFromApi(requestUrl: urlRequest, resultStruct: [Model].self) { (resultModel, error) in
             DispatchQueue.main.async {
                 self.model = resultModel as? [Model]
@@ -49,12 +51,12 @@ extension ViewController: UITableViewDataSource {
         }
         let cellViewModel = ViewModel()
         cellViewModel.model = model?[indexPath.row]
-        productListCell.nameLabel.text = cellViewModel.productName
-        productListCell.priceLabel.text = cellViewModel.productPrice
-        productListCell.priceLabel.textColor = cellViewModel.color
+        productListCell.pid = cellViewModel.productId
+        productListCell.configureCell(cellVM: cellViewModel)
         cellViewModel.model?.setImage(completion: { (image) in
             productListCell.productImage.image = image
         })
+        
         //productListCell.productImage.image = UIImage(named: "product-image")
         
         return productListCell

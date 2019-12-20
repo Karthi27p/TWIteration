@@ -38,4 +38,7 @@ class ViewModel: NSObject {
         return model?.image ?? ""
     }
     
+    var productId: String {
+        return model?.pid ?? ""
+    }
 }

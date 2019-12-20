@@ -16,6 +16,7 @@ class Model: Codable {
     var desc: String?
     var cachedImage: UIImage?
     var placeholderImage: UIImage?
+    var pid: String?
     
     enum CodingKeys: CodingKey {
         case name
@@ -23,6 +24,7 @@ class Model: Codable {
         case image
         case desc
         case offerPrice
+        case pid
     }
     
     

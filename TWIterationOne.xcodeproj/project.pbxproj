@@ -15,6 +15,11 @@
 		A72B243723AC92BF00D9D91D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72B243523AC92BF00D9D91D /* LaunchScreen.storyboard */; };
 		A72B244223AC92C000D9D91D /* TWIterationOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B244123AC92C000D9D91D /* TWIterationOneTests.swift */; };
 		A72B244D23AC92C000D9D91D /* TWIterationOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B244C23AC92C000D9D91D /* TWIterationOneUITests.swift */; };
+		A72B245B23AC930C00D9D91D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B245A23AC930C00D9D91D /* ApiService.swift */; };
+		A72B245D23AC94A400D9D91D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B245C23AC94A400D9D91D /* Model.swift */; };
+		A72B245F23AC94B900D9D91D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B245E23AC94B900D9D91D /* ViewModel.swift */; };
+		A72B246523AC95BD00D9D91D /* ProductListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B246423AC95BD00D9D91D /* ProductListCellTableViewCell.swift */; };
+		A72B246923AC983C00D9D91D /* SampleJson.json in Resources */ = {isa = PBXBuildFile; fileRef = A72B246823AC983C00D9D91D /* SampleJson.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		A72B244823AC92C000D9D91D /* TWIterationOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWIterationOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72B244C23AC92C000D9D91D /* TWIterationOneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWIterationOneUITests.swift; sourceTree = "<group>"; };
 		A72B244E23AC92C000D9D91D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A72B245A23AC930C00D9D91D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A72B245C23AC94A400D9D91D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A72B245E23AC94B900D9D91D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A72B246423AC95BD00D9D91D /* ProductListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCellTableViewCell.swift; sourceTree = "<group>"; };
+		A72B246823AC983C00D9D91D /* SampleJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleJson.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 		A72B241D23AC92BE00D9D91D = {
 			isa = PBXGroup;
 			children = (
+				A72B246823AC983C00D9D91D /* SampleJson.json */,
 				A72B242823AC92BE00D9D91D /* TWIterationOne */,
 				A72B244023AC92C000D9D91D /* TWIterationOneTests */,
 				A72B244B23AC92C000D9D91D /* TWIterationOneUITests */,
@@ -100,8 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				A72B242923AC92BE00D9D91D /* AppDelegate.swift */,
-				A72B242B23AC92BE00D9D91D /* ViewController.swift */,
+				A72B246323AC94DF00D9D91D /* Controllers */,
+				A72B246223AC94CE00D9D91D /* Network Calls */,
+				A72B246023AC94BE00D9D91D /* Model */,
+				A72B246123AC94C500D9D91D /* ViewModel */,
 				A72B242D23AC92BE00D9D91D /* Main.storyboard */,
+				A72B246423AC95BD00D9D91D /* ProductListCellTableViewCell.swift */,
 				A72B243323AC92BF00D9D91D /* Assets.xcassets */,
 				A72B243523AC92BF00D9D91D /* LaunchScreen.storyboard */,
 				A72B243823AC92C000D9D91D /* Info.plist */,
@@ -126,6 +141,38 @@
 				A72B244E23AC92C000D9D91D /* Info.plist */,
 			);
 			path = TWIterationOneUITests;
+			sourceTree = "<group>";
+		};
+		A72B246023AC94BE00D9D91D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A72B245C23AC94A400D9D91D /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A72B246123AC94C500D9D91D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A72B245E23AC94B900D9D91D /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A72B246223AC94CE00D9D91D /* Network Calls */ = {
+			isa = PBXGroup;
+			children = (
+				A72B245A23AC930C00D9D91D /* ApiService.swift */,
+			);
+			path = "Network Calls";
+			sourceTree = "<group>";
+		};
+		A72B246323AC94DF00D9D91D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A72B242B23AC92BE00D9D91D /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +281,7 @@
 			files = (
 				A72B243723AC92BF00D9D91D /* LaunchScreen.storyboard in Resources */,
 				A72B243423AC92BF00D9D91D /* Assets.xcassets in Resources */,
+				A72B246923AC983C00D9D91D /* SampleJson.json in Resources */,
 				A72B242F23AC92BE00D9D91D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72B246523AC95BD00D9D91D /* ProductListCellTableViewCell.swift in Sources */,
+				A72B245D23AC94A400D9D91D /* Model.swift in Sources */,
 				A72B242C23AC92BE00D9D91D /* ViewController.swift in Sources */,
 				A72B243223AC92BE00D9D91D /* TWIterationOne.xcdatamodeld in Sources */,
+				A72B245B23AC930C00D9D91D /* ApiService.swift in Sources */,
+				A72B245F23AC94B900D9D91D /* ViewModel.swift in Sources */,
 				A72B242A23AC92BE00D9D91D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

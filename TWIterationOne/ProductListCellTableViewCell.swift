@@ -45,14 +45,14 @@ class ProductListCellTableViewCell: UITableViewCell {
         UserDefaults.standard.synchronize()
         
         let result = UserDefaults.standard.integer(forKey: id)
-        self.countLabel.text = String(result)
+        self.countLabel.text = "("+String(result)+")"
         
     }
     
     func getCount() -> String {
         let id = self.pid!
         let result = UserDefaults.standard.integer(forKey: id)
-        return String(result)
+        return "("+String(result)+")"
     }
    
 }

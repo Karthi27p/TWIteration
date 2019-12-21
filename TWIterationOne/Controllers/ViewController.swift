@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         let url = URL(string: "http://www.mocky.io/v2/5dfb59e72f00006200ff9e80")
         let urlRequest = URLRequest(url: url!)
         self.tableView.estimatedRowHeight = 120.0
+        self.tabBarController?.delegate = self as? UITabBarControllerDelegate
         self.tableView.rowHeight = UITableView.automaticDimension
         ApiService.getDataFromApi(requestUrl: urlRequest, resultStruct: [Model].self) { [weak self] (resultModel, error) in
             DispatchQueue.main.async {
@@ -59,5 +60,11 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
+    }
+}
+
+extension ViewController: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("Test")
     }
 }

@@ -20,6 +20,9 @@
 		A72B245F23AC94B900D9D91D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B245E23AC94B900D9D91D /* ViewModel.swift */; };
 		A72B246523AC95BD00D9D91D /* ProductListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72B246423AC95BD00D9D91D /* ProductListCellTableViewCell.swift */; };
 		A72B246923AC983C00D9D91D /* SampleJson.json in Resources */ = {isa = PBXBuildFile; fileRef = A72B246823AC983C00D9D91D /* SampleJson.json */; };
+		A7B06EFC23ADD3F100F4ABB5 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B06EFB23ADD3F100F4ABB5 /* WishListViewController.swift */; };
+		A7B06EFE23ADD67800F4ABB5 /* WishListItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B06EFD23ADD67800F4ABB5 /* WishListItemCellTableViewCell.swift */; };
+		A7B06F0023ADD6A100F4ABB5 /* WishListTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B06EFF23ADD6A100F4ABB5 /* WishListTotalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		A72B245E23AC94B900D9D91D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A72B246423AC95BD00D9D91D /* ProductListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCellTableViewCell.swift; sourceTree = "<group>"; };
 		A72B246823AC983C00D9D91D /* SampleJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleJson.json; sourceTree = "<group>"; };
+		A7B06EFB23ADD3F100F4ABB5 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		A7B06EFD23ADD67800F4ABB5 /* WishListItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItemCellTableViewCell.swift; sourceTree = "<group>"; };
+		A7B06EFF23ADD6A100F4ABB5 /* WishListTotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTotalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 				A72B246023AC94BE00D9D91D /* Model */,
 				A72B246123AC94C500D9D91D /* ViewModel */,
 				A72B242D23AC92BE00D9D91D /* Main.storyboard */,
+				A7B06EFD23ADD67800F4ABB5 /* WishListItemCellTableViewCell.swift */,
+				A7B06EFF23ADD6A100F4ABB5 /* WishListTotalCell.swift */,
 				A72B246423AC95BD00D9D91D /* ProductListCellTableViewCell.swift */,
 				A72B243323AC92BF00D9D91D /* Assets.xcassets */,
 				A72B243523AC92BF00D9D91D /* LaunchScreen.storyboard */,
@@ -171,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				A72B242B23AC92BE00D9D91D /* ViewController.swift */,
+				A7B06EFB23ADD3F100F4ABB5 /* WishListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,8 +319,11 @@
 				A72B246523AC95BD00D9D91D /* ProductListCellTableViewCell.swift in Sources */,
 				A72B245D23AC94A400D9D91D /* Model.swift in Sources */,
 				A72B242C23AC92BE00D9D91D /* ViewController.swift in Sources */,
+				A7B06EFE23ADD67800F4ABB5 /* WishListItemCellTableViewCell.swift in Sources */,
 				A72B243223AC92BE00D9D91D /* TWIterationOne.xcdatamodeld in Sources */,
+				A7B06F0023ADD6A100F4ABB5 /* WishListTotalCell.swift in Sources */,
 				A72B245B23AC930C00D9D91D /* ApiService.swift in Sources */,
+				A7B06EFC23ADD3F100F4ABB5 /* WishListViewController.swift in Sources */,
 				A72B245F23AC94B900D9D91D /* ViewModel.swift in Sources */,
 				A72B242A23AC92BE00D9D91D /* AppDelegate.swift in Sources */,
 			);

@@ -34,12 +34,13 @@ class ProductListCellTableViewCell: UITableViewCell {
         self.priceLabel.textColor = cellVM.color
         self.stepper.autorepeat = true
         self.stepper.wraps = true
+        self.stepper.value = Double(getCountAsInt())
         self.countLabel.text = getCount()
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         let count = Int(sender.value).description
-        let id = self.pid!
+        let id = self.pid ?? ""
         
         UserDefaults.standard.set(Int(count), forKey: id)
         UserDefaults.standard.synchronize()
@@ -49,8 +50,14 @@ class ProductListCellTableViewCell: UITableViewCell {
         
     }
     
+    func getCountAsInt() -> Int {
+        let id = self.pid ?? ""
+        let result = UserDefaults.standard.integer(forKey: id)
+        return result
+    }
+    
     func getCount() -> String {
-        let id = self.pid!
+        let id = self.pid ?? ""
         let result = UserDefaults.standard.integer(forKey: id)
         return "("+String(result)+")"
     }
